@@ -5,10 +5,12 @@ from .serializers import ClubSerializer
 from .serializers import ClubFullSerializer
 
 
-class ClubViewset(viewsets.ModelViewSet):
+# create ViewSet for clubs
+class ClubViewSet(viewsets.ModelViewSet):
     serializer_class = ClubSerializer
     queryset = Club.objects.all()
 
+    # change serializer to get more info about club after choose particular id
     def retrieve(self, request, *args, **kwargs):
         club = self.get_object()
         serializer = ClubFullSerializer(club)

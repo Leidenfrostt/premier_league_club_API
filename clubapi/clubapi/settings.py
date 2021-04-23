@@ -37,23 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'corsheaders',
-    'clubs',
+    'rest_framework',  # added
+    'rest_framework.authtoken',  # token authentication
+    'corsheaders',  # cors for React project
+    'clubs',  # club model
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # added
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# added for React project
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
 )
@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'  # this two strings are useful for give right path to crests
 MEDIA_ROOT = 'media/'
 
 # Default primary key field type
